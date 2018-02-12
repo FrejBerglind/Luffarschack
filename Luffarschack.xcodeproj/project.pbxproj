@@ -9,19 +9,27 @@
 /* Begin PBXBuildFile section */
 		B34669D6203196F700DEEE44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669D5203196F700DEEE44 /* AppDelegate.swift */; };
 		B34669D8203196F700DEEE44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669D7203196F700DEEE44 /* ViewController.swift */; };
-		B34669DB203196F700DEEE44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34669D9203196F700DEEE44 /* Main.storyboard */; };
 		B34669DD203196F700DEEE44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34669DC203196F700DEEE44 /* Assets.xcassets */; };
 		B34669E0203196F700DEEE44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34669DE203196F700DEEE44 /* LaunchScreen.storyboard */; };
+		B34669E82031972100DEEE44 /* Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669E72031972100DEEE44 /* Basics.swift */; };
+		B34669EA2031AA0500DEEE44 /* Bots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669E92031AA0500DEEE44 /* Bots.swift */; };
+		B34669EC2031AA3F00DEEE44 /* AlphaBetaBots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669EB2031AA3F00DEEE44 /* AlphaBetaBots.swift */; };
+		B34669EE2031AA7100DEEE44 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669ED2031AA7100DEEE44 /* PickerDialog.swift */; };
+		B34669F02031AAE300DEEE44 /* RankedBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669EF2031AAE300DEEE44 /* RankedBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B34669D2203196F700DEEE44 /* Luffarschack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luffarschack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34669D5203196F700DEEE44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B34669D7203196F700DEEE44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B34669DA203196F700DEEE44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B34669DC203196F700DEEE44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B34669DF203196F700DEEE44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B34669E1203196F700DEEE44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B34669E72031972100DEEE44 /* Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basics.swift; sourceTree = "<group>"; };
+		B34669E92031AA0500DEEE44 /* Bots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bots.swift; sourceTree = "<group>"; };
+		B34669EB2031AA3F00DEEE44 /* AlphaBetaBots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBetaBots.swift; sourceTree = "<group>"; };
+		B34669ED2031AA7100DEEE44 /* PickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDialog.swift; sourceTree = "<group>"; };
+		B34669EF2031AAE300DEEE44 /* RankedBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +62,13 @@
 		B34669D4203196F700DEEE44 /* Luffarschack */ = {
 			isa = PBXGroup;
 			children = (
-				B34669D5203196F700DEEE44 /* AppDelegate.swift */,
+				B34669E72031972100DEEE44 /* Basics.swift */,
+				B34669EF2031AAE300DEEE44 /* RankedBoard.swift */,
+				B34669E92031AA0500DEEE44 /* Bots.swift */,
+				B34669EB2031AA3F00DEEE44 /* AlphaBetaBots.swift */,
 				B34669D7203196F700DEEE44 /* ViewController.swift */,
-				B34669D9203196F700DEEE44 /* Main.storyboard */,
+				B34669D5203196F700DEEE44 /* AppDelegate.swift */,
+				B34669ED2031AA7100DEEE44 /* PickerDialog.swift */,
 				B34669DC203196F700DEEE44 /* Assets.xcassets */,
 				B34669DE203196F700DEEE44 /* LaunchScreen.storyboard */,
 				B34669E1203196F700DEEE44 /* Info.plist */,
@@ -125,7 +137,6 @@
 			files = (
 				B34669E0203196F700DEEE44 /* LaunchScreen.storyboard in Resources */,
 				B34669DD203196F700DEEE44 /* Assets.xcassets in Resources */,
-				B34669DB203196F700DEEE44 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +147,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34669E82031972100DEEE44 /* Basics.swift in Sources */,
+				B34669F02031AAE300DEEE44 /* RankedBoard.swift in Sources */,
+				B34669EA2031AA0500DEEE44 /* Bots.swift in Sources */,
 				B34669D8203196F700DEEE44 /* ViewController.swift in Sources */,
 				B34669D6203196F700DEEE44 /* AppDelegate.swift in Sources */,
+				B34669EC2031AA3F00DEEE44 /* AlphaBetaBots.swift in Sources */,
+				B34669EE2031AA7100DEEE44 /* PickerDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B34669D9203196F700DEEE44 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B34669DA203196F700DEEE44 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B34669DE203196F700DEEE44 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -211,12 +219,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -262,10 +271,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
