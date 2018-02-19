@@ -149,7 +149,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! MyCollectionViewCell
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 2*cellSize, height: 2*cellSize))
-        label.center = CGPoint(x: cellSize/2, y: 2*cellSize/5)
+        label.center = CGPoint(x: cellSize/2, y: 0.37*cellSize)
         label.textAlignment = .center
         label.font=UIFont.systemFont(ofSize: 1.5*cellSize)
         cell.myLabel=label
