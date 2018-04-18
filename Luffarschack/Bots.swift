@@ -8,6 +8,36 @@
 
 import Foundation
 
+/** A bot using RankedBoard to find the best moves.
+ */
+struct MediumBot: Player {
+    let board: Board
+    let xOrO: XorO
+    let description = "MediumBot"
+    
+    func nextMove()->Move {
+        if(board.isEmpty){
+            let n=5
+            let interval=Array(n...board.side-1-n)
+            return Move(row: interval.randomElement(),col: interval.randomElement(),xOrO: xOrO)
+        }
+        else{
+            let moves=bestMoves()
+            if moves.isEmpty{
+                return Move(board.openCells().randomElement(), xOrO)
+            }
+            return moves.randomElement()
+        }
+    }
+    
+    /** Best moves for the player.
+     */
+    func bestMoves()->[Move]{
+        return board.rankedBoard().bestMoves(for: xOrO)
+    }
+}
+
+
 /** Like mediumbot, but uses alphabeta-pruning to find winning moves
  */
 struct MasterBot: Player{
@@ -137,32 +167,6 @@ struct MasterBot: Player{
     }
 }
 
-/** A bot using RankedBoard to find the best moves.
- */
-struct MediumBot: Player {
-    let board: Board
-    let xOrO: XorO
-    let description = "MediumBot"
-    
-    func nextMove()->Move {
-        if(board.isEmpty){
-            return Move(row: board.side/2,col: board.side/2,xOrO: xOrO)
-        }
-        else{
-            let moves=bestMoves()
-            if moves.isEmpty{
-                return Move(board.openCells().randomElement(), xOrO)
-            }
-            return moves.randomElement()
-        }
-    }
-    
-    /** Best moves for the player.
-     */
-    func bestMoves()->[Move]{
-        return board.rankedBoard().bestMoves(for: xOrO)
-    }
-}
 
 /** A bot who simply tries to get/block as many in a row as possible.
  */

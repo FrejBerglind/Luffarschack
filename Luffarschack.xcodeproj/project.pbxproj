@@ -7,19 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31422D02049302B00FC9E20 /* TrainedAI in Resources */ = {isa = PBXBuildFile; fileRef = B31422CF2049302B00FC9E20 /* TrainedAI */; };
+		B3319E3E203CB4420001016D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3319E37203CB4420001016D /* Storage.swift */; };
+		B3319E3F203CB4420001016D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3319E38203CB4420001016D /* Error.swift */; };
+		B3319E40203CB4420001016D /* Activation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3319E39203CB4420001016D /* Activation.swift */; };
+		B3319E41203CB4420001016D /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3319E3A203CB4420001016D /* Structure.swift */; };
+		B3319E42203CB4420001016D /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3319E3B203CB4420001016D /* Dataset.swift */; };
+		B3319E43203CB4420001016D /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3319E3C203CB4420001016D /* Cache.swift */; };
+		B3319E44203CB4420001016D /* NeuralNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3319E3D203CB4420001016D /* NeuralNet.swift */; };
 		B34669D6203196F700DEEE44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669D5203196F700DEEE44 /* AppDelegate.swift */; };
 		B34669D8203196F700DEEE44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669D7203196F700DEEE44 /* ViewController.swift */; };
 		B34669DD203196F700DEEE44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34669DC203196F700DEEE44 /* Assets.xcassets */; };
 		B34669E0203196F700DEEE44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B34669DE203196F700DEEE44 /* LaunchScreen.storyboard */; };
 		B34669E82031972100DEEE44 /* Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669E72031972100DEEE44 /* Basics.swift */; };
 		B34669EA2031AA0500DEEE44 /* Bots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669E92031AA0500DEEE44 /* Bots.swift */; };
-		B34669EC2031AA3F00DEEE44 /* AlphaBetaBots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669EB2031AA3F00DEEE44 /* AlphaBetaBots.swift */; };
+		B34669EC2031AA3F00DEEE44 /* AlphaBetaBotsOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669EB2031AA3F00DEEE44 /* AlphaBetaBotsOld.swift */; };
 		B34669EE2031AA7100DEEE44 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669ED2031AA7100DEEE44 /* PickerDialog.swift */; };
 		B34669F02031AAE300DEEE44 /* RankedBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34669EF2031AAE300DEEE44 /* RankedBoard.swift */; };
 		B38EACC8203AF077007421CC /* AIBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EACC7203AF077007421CC /* AIBot.swift */; };
+		B3C99BE2206FD8B900B35F88 /* AlphaBetaBots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C99BE1206FD8B900B35F88 /* AlphaBetaBots.swift */; };
+		B3FEC5272056A80C00BC5B58 /* AIBot2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FEC5262056A80C00BC5B58 /* AIBot2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B31422CF2049302B00FC9E20 /* TrainedAI */ = {isa = PBXFileReference; lastKnownFileType = text; path = TrainedAI; sourceTree = "<group>"; };
+		B3319E37203CB4420001016D /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		B3319E38203CB4420001016D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		B3319E39203CB4420001016D /* Activation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activation.swift; sourceTree = "<group>"; };
+		B3319E3A203CB4420001016D /* Structure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
+		B3319E3B203CB4420001016D /* Dataset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		B3319E3C203CB4420001016D /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		B3319E3D203CB4420001016D /* NeuralNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNet.swift; sourceTree = "<group>"; };
 		B34669D2203196F700DEEE44 /* Luffarschack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luffarschack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34669D5203196F700DEEE44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B34669D7203196F700DEEE44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,10 +46,12 @@
 		B34669E1203196F700DEEE44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34669E72031972100DEEE44 /* Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basics.swift; sourceTree = "<group>"; };
 		B34669E92031AA0500DEEE44 /* Bots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bots.swift; sourceTree = "<group>"; };
-		B34669EB2031AA3F00DEEE44 /* AlphaBetaBots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBetaBots.swift; sourceTree = "<group>"; };
+		B34669EB2031AA3F00DEEE44 /* AlphaBetaBotsOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBetaBotsOld.swift; sourceTree = "<group>"; };
 		B34669ED2031AA7100DEEE44 /* PickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDialog.swift; sourceTree = "<group>"; };
 		B34669EF2031AAE300DEEE44 /* RankedBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedBoard.swift; sourceTree = "<group>"; };
 		B38EACC7203AF077007421CC /* AIBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBot.swift; sourceTree = "<group>"; };
+		B3C99BE1206FD8B900B35F88 /* AlphaBetaBots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBetaBots.swift; sourceTree = "<group>"; };
+		B3FEC5262056A80C00BC5B58 /* AIBot2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBot2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +65,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3319E36203CB4420001016D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B3319E37203CB4420001016D /* Storage.swift */,
+				B3319E38203CB4420001016D /* Error.swift */,
+				B3319E39203CB4420001016D /* Activation.swift */,
+				B3319E3A203CB4420001016D /* Structure.swift */,
+				B3319E3B203CB4420001016D /* Dataset.swift */,
+				B3319E3C203CB4420001016D /* Cache.swift */,
+				B3319E3D203CB4420001016D /* NeuralNet.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		B34669C9203196F700DEEE44 = {
 			isa = PBXGroup;
 			children = (
@@ -68,10 +102,14 @@
 				B34669EF2031AAE300DEEE44 /* RankedBoard.swift */,
 				B34669E92031AA0500DEEE44 /* Bots.swift */,
 				B38EACC7203AF077007421CC /* AIBot.swift */,
-				B34669EB2031AA3F00DEEE44 /* AlphaBetaBots.swift */,
+				B3FEC5262056A80C00BC5B58 /* AIBot2.swift */,
+				B34669EB2031AA3F00DEEE44 /* AlphaBetaBotsOld.swift */,
+				B3C99BE1206FD8B900B35F88 /* AlphaBetaBots.swift */,
 				B34669D7203196F700DEEE44 /* ViewController.swift */,
+				B31422CF2049302B00FC9E20 /* TrainedAI */,
 				B34669D5203196F700DEEE44 /* AppDelegate.swift */,
 				B34669ED2031AA7100DEEE44 /* PickerDialog.swift */,
+				B3319E36203CB4420001016D /* Sources */,
 				B34669DC203196F700DEEE44 /* Assets.xcassets */,
 				B34669DE203196F700DEEE44 /* LaunchScreen.storyboard */,
 				B34669E1203196F700DEEE44 /* Info.plist */,
@@ -138,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31422D02049302B00FC9E20 /* TrainedAI in Resources */,
 				B34669E0203196F700DEEE44 /* LaunchScreen.storyboard in Resources */,
 				B34669DD203196F700DEEE44 /* Assets.xcassets in Resources */,
 			);
@@ -150,14 +189,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3319E43203CB4420001016D /* Cache.swift in Sources */,
 				B34669E82031972100DEEE44 /* Basics.swift in Sources */,
 				B34669F02031AAE300DEEE44 /* RankedBoard.swift in Sources */,
 				B34669EA2031AA0500DEEE44 /* Bots.swift in Sources */,
 				B34669D8203196F700DEEE44 /* ViewController.swift in Sources */,
+				B3FEC5272056A80C00BC5B58 /* AIBot2.swift in Sources */,
 				B34669D6203196F700DEEE44 /* AppDelegate.swift in Sources */,
+				B3319E3E203CB4420001016D /* Storage.swift in Sources */,
+				B3319E42203CB4420001016D /* Dataset.swift in Sources */,
 				B38EACC8203AF077007421CC /* AIBot.swift in Sources */,
-				B34669EC2031AA3F00DEEE44 /* AlphaBetaBots.swift in Sources */,
+				B3C99BE2206FD8B900B35F88 /* AlphaBetaBots.swift in Sources */,
+				B34669EC2031AA3F00DEEE44 /* AlphaBetaBotsOld.swift in Sources */,
+				B3319E3F203CB4420001016D /* Error.swift in Sources */,
+				B3319E44203CB4420001016D /* NeuralNet.swift in Sources */,
+				B3319E40203CB4420001016D /* Activation.swift in Sources */,
 				B34669EE2031AA7100DEEE44 /* PickerDialog.swift in Sources */,
+				B3319E41203CB4420001016D /* Structure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,11 +339,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K4M76SCJCP;
 				INFOPLIST_FILE = Luffarschack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FB.Luffarschack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -306,11 +355,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K4M76SCJCP;
 				INFOPLIST_FILE = Luffarschack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FB.Luffarschack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

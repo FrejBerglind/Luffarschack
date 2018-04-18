@@ -10,7 +10,7 @@ import Foundation
 
 /** It's alive!
  */
-class AIBot: Player{
+class AIBot2: Player{
     
     var board: Board
     let xOrO: XorO
@@ -22,7 +22,7 @@ class AIBot: Player{
     // Limits for good moves:
     
     let batchSize = 16
-    let N = 5 //Nbr of saved games for training
+    let N = 10 //Nbr of saved games for training
     let tol=2
     let limit=50
     let nn: NeuralNet
@@ -47,7 +47,7 @@ class AIBot: Player{
     
     func nextMove()->Move {
         if(board.isEmpty){
-            let n=5
+            let n=0
             let interval=Array(n...board.side-1-n)
             return Move(row: interval.randomElement(),col: interval.randomElement(),xOrO: xOrO)
         }
@@ -60,15 +60,15 @@ class AIBot: Player{
      */
     func bestMove(_ rb: RankedBoard) -> Move {
         var bestMoves: [Move]=[]
-        var m: Float = -2
+        var m: Float = -Float.infinity
         //print("Good moves:")
         let gm=rb.goodMoves(for: xOrO, tol, limit)
         for move in gm{
             let copy=rb.copy()
             copy.put(move)
-            let rank=ranking(copy.floatBoard(player: xOrO))
+            let rank=ranking(copy.floatRankings(for: xOrO))
             //print(rank)
-            let r=rank[0]//-rank[2]
+            let r=rank[0]-rank[2]
             if r>m{
                 m=r
                 bestMoves=[move]
@@ -80,8 +80,8 @@ class AIBot: Player{
         let move=bestMoves.randomElement()
         let copy=rb.copy()
         copy.put(move)
-        choices.append(Choice(data: copy.floatBoard(player: xOrO), ranking: ranking(copy.floatBoard(player: xOrO))))
-        opponentsChoices.append(Choice(data: board.floatBoard(player: opponent(xOrO)), ranking: ranking(board.floatBoard(player: opponent(xOrO)))))
+        choices.append(Choice(data: copy.floatRankings(for: xOrO), ranking: ranking(copy.floatRankings(for: xOrO))))
+        opponentsChoices.append(Choice(data: rb.floatRankings(for: opponent(xOrO)), ranking: ranking(rb.floatRankings(for: opponent(xOrO)))))
         return move
     }
     
@@ -245,90 +245,36 @@ class AIBot: Player{
     }
 }
 
-struct Choice {
-    let data: [Float];
-    let ranking: [Float];
-}
+extension RankedBoard {
+    func floatRankings(for player: XorO)->[Float]{
+        var fr: [Float]=[]
+        var rb: [[Int]]
+        switch player {
+        case .x:
+            rb=rbX.rb
+            rb.append(contentsOf: rbO.rb.reversed())
+        case .o:
+            rb=rbO.rb
+            rb.append(contentsOf: rbX.rb.reversed())
+        default:
+            print("This is impossible!")
+            return []
+        }
+        for row in rb {
+            for ranking in row {
+                fr.append(Float(ranking))
+            }
+        }
+        //let m = fr.max()!
+        let s = fr.sum()
+        for i in 0..<fr.count {
+            fr[i]=(fr[i]-s)/100000
+        }
 
-extension Board{
-    /*
-    func floatBoard(player: XorO) -> [Float] {
-        var ib: [Float]=[]
-        for row in board {
-            for cell in row {
-                switch cell {
-                case player: ib.append(1)
-                case .empty: ib.append(0)
-                default: ib.append(-1)
-                }
-            }
-        }
-        return ib
-    }
-    */
-    
-    func floatBoard(player: XorO) -> [Float] {
-        var floatBoard: [Float]=[]
-        var opponentsMoves: [Float]=[]
-        for row in board {
-            for cell in row {
-                switch cell {
-                case player:
-                    floatBoard.append(1)
-                    opponentsMoves.append(0)
-                case .empty:
-                    floatBoard.append(0)
-                    opponentsMoves.append(0)
-                default:
-                    floatBoard.append(0)
-                    opponentsMoves.append(1)
-                }
-            }
-        }
-        floatBoard.append(contentsOf: opponentsMoves.reversed())
-        return floatBoard
+        return fr
     }
 }
 
-public extension Array where Element: Numeric {
-    
-    /// SwifterSwift: Sum of all elements in array.
-    ///
-    ///        [1, 2, 3, 4, 5].sum() -> 15
-    ///
-    /// - Returns: sum of the array's elements.
-    public func sum() -> Element {
-        var total: Element = 0
-        for i in 0..<count {
-            total += self[i]
-        }
-        return total
-    }
-    
-    /// SwifterSwift: Shuffle array. (Using Fisher-Yates Algorithm)
-    ///
-    ///        [1, 2, 3, 4, 5].shuffle() // shuffles array
-    ///
-    public mutating func shuffle() {
-        // http://stackoverflow.com/questions/37843647/shuffle-array-swift-3
-        guard count > 1 else { return }
-        for index in startIndex..<endIndex - 1 {
-            let randomIndex = Int(arc4random_uniform(UInt32(endIndex - index))) + index
-            if index != randomIndex { swapAt(index, randomIndex) }
-        }
-    }
-    
-    /// SwifterSwift: Shuffled version of array. (Using Fisher-Yates Algorithm)
-    ///
-    ///        [1, 2, 3, 4, 5].shuffled // return a shuffled version from given array e.g. [2, 4, 1, 3, 5].
-    ///
-    /// - Returns: the array with its elements shuffled.
-    public func shuffled() -> [Element] {
-        var array = self
-        array.shuffle()
-        return array
-    }
-    
-}
+
 
 

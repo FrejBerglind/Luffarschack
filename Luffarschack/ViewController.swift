@@ -51,28 +51,39 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         players.append(Human(self, .x, board))
         //players.append(Human(self, .o, board))
         players.append(Beta(board: board, xOrO: .o))
-        //players.append(MediumBot(board: board, xOrO: .x))
+        /*
+        let AI=AIBot(board, .o)
+        print("BasicTraining: \(AI.basicTraining())")
+        AI.save()
+        players.append(AI)
+ */
     }
     
-    /** Is run when the game is on!
+    /** Runs when the game is on!
      */
     func playGame(){
         while(true){
             for player in players {
                 let move: Move
                 if player is Human{
+                    DispatchQueue.main.sync{
+                        label.text="Your move!"
+                    }
                     move=player.nextMove()
-                    self.board.put(move)
+                    board.put(move)
                 } else {
                     //botIsThinking=true
+                    DispatchQueue.main.sync{
+                        label.text="I am thinking..."
+                    }
                     move=player.nextMove()
-                    self.board.put(move)
+                    board.put(move)
                     //botIsThinking=false
                 }
                 
                 DispatchQueue.main.sync{
-                    self.putCellTo(move)
-                    self.board.printBoard()
+                    putCellTo(move)
+                    board.printBoard()
                 }
                 if let winner: XorO = board.win() {
                     gameOver(winner)
@@ -112,7 +123,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         }
     }
     
-    /** Updates the board shown on the screen to the move Move
+    /** Updates the board shown on the screen with move
      */
     func putCellTo(_ move: Move){
         let s=Int(side)
@@ -284,7 +295,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
             ["value": "MasterBot", "display": "Master Bot"],
             //["value": "WittyBot", "display": "Witty Bot"],
             ["value": "Alpha", "display": "Alpha"],
-            ["value": "Beta", "display": "Beta"]
+            ["value": "Beta", "display": "Beta"],
+            ["value": "Gamma", "display": "Gamma"]
         ]
         
         PickerDialog().show("Choose player", options: pickerData, selected: String(describing: players[n])) {
@@ -297,6 +309,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
             //case "WittyBot": self.players[n] =  MediumBot(board: self.board, xOrO: xOrO)
             case "Alpha":self.players[n] = Alpha(board: self.board, xOrO: xOrO)
             case "Beta":self.players[n] = Beta(board: self.board, xOrO: xOrO)
+            case "Gamma":self.players[n] = Gamma(board: self.board, xOrO: xOrO)
             default: fatalError("This ain't good!")
             }
             print(value)
@@ -304,7 +317,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         
     }
     
-    /** Undos 1 move if two human players otherwise 2 moves
+    /** Undos 1 move if there are two human players, otherwise 2 moves.
      */
     @objc func undo(){
         undoIsClicked=true
@@ -331,13 +344,14 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         }
     }
     
-    /** Sets up new game
+    /** Sets up a new game
      */
     @objc func newGame(){
         board.clear()
         clearAllCells()
         newGameIsClicked=true
         clicked=false
+        label.text = defaultText
     }
     
     /** Clears the board shown on screen.

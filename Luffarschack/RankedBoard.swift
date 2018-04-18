@@ -73,7 +73,6 @@ extension RankedBoard{
     /** Useful print for testing
      */
     func printRankings() {
-        print("Rätt import!")
         printBoard()
         print("X:")
         for row in rbX.rb{
@@ -94,7 +93,7 @@ extension RankedBoard{
         
     }
     
-    /** @Returns the ranking of move
+    /** Returns the ranking of move
      */
     func ranking(of move: Move)->Int{
         let this: RB
@@ -177,7 +176,7 @@ extension RankedBoard{
                 for col in 0..<side{
                     if row==r&&col==c {continue}
                     let ranking = (3*this.rb[row][col])/2+other.rb[row][col]
-                    if max<ranking*tol-limit {
+                    if max<ranking*tol-limit||ranking==max {
                         goodMoves.append(Move(row: row, col: col, xOrO: player))
                     }
                 }
