@@ -68,6 +68,7 @@
 		B3319E36203CB4420001016D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B31422CF2049302B00FC9E20 /* TrainedAI */,
 				B3319E37203CB4420001016D /* Storage.swift */,
 				B3319E38203CB4420001016D /* Error.swift */,
 				B3319E39203CB4420001016D /* Activation.swift */,
@@ -106,7 +107,6 @@
 				B34669EB2031AA3F00DEEE44 /* AlphaBetaBotsOld.swift */,
 				B3C99BE1206FD8B900B35F88 /* AlphaBetaBots.swift */,
 				B34669D7203196F700DEEE44 /* ViewController.swift */,
-				B31422CF2049302B00FC9E20 /* TrainedAI */,
 				B34669D5203196F700DEEE44 /* AppDelegate.swift */,
 				B34669ED2031AA7100DEEE44 /* PickerDialog.swift */,
 				B3319E36203CB4420001016D /* Sources */,
